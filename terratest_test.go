@@ -48,7 +48,8 @@ func TestModule(t *testing.T)  {
 		fmt.Printf("Test Passed , DefaultAction is set to Allow")
 
 	}		else{
-		fmt.Printf("DefaultAction Test failed , DefaultAction is set to %s!", storageData.Properties.NetworkAcls.DefaultAction)
+		fmt.Printf("DefaultAction Test failed , DefaultAction is set to %s, Destroying the resource.", storageData.Properties.NetworkAcls.DefaultAction)
+		defer terraform.Destroy(t, terraformOptions)
 	}
 
 }
