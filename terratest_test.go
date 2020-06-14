@@ -39,7 +39,7 @@ func TestModule(t *testing.T)  {
 	assert.Equal(t, keyVaultData.Location, "eastus")
 	assert.Equal(t, keyVaultData.Properties.Sku.Name, "standard")
 	for _, v := range storageData.Properties.NetworkAcls.IPRules{
-		assert.Equal(t, v.Value, "161.130.178.143")
+		assert.Equal(t, v.Value, "100.100.100.100")
 	}
 	for _, v := range storageData.Properties.NetworkAcls.VirtualNetworkRules{
 		assert.Equal(t, v.Action, "Allow")
